@@ -10,6 +10,7 @@
     - 实现监控postgres的功能
     - 需要细化权限的划分，不同的账户实现不同的功能
     - 使用PostgreSQL数据库保存状态
+    - SNMP 模型 or master-slave模型
 
 2、根据前台的具体需求来实现后台的功能
     - 确定实现功能的具体方法（SSH or agent）
