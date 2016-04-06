@@ -118,3 +118,4 @@ text_read.py
 py/password_hash/.idea
 */.idea
 db.sqlite3
+config/database.yml
