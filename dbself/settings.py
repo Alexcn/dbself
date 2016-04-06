@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'dbself_20160401',
         'USER': 'dbself',
         'PASSWORD': '123456',
-        'HOST': '192.168.12.123',
+        'HOST': 'localhost',
         'PORT': '5432'
     }
 }
