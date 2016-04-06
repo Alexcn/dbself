@@ -10,11 +10,20 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from yaml import load
 
+try:
+        from yaml import CLoader as Loader
+except:
+        from yaml import Loader
+
+data_stream = open('./config/database.yml', 'r')
+
+db_config = load(data_stream, Loader=Loader)
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -77,11 +86,11 @@ WSGI_APPLICATION = 'dbself.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbself_20160401',
-        'USER': 'dbself',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'NAME': db_config['production']['database'],
+        'USER': db_config['production']['username'],
+        'PASSWORD': db_config['production']['password'],
+        'HOST': db_config['production']['host'],
+        'PORT': db_config['production']['port']
     }
 }
 
