@@ -1,0 +1,4 @@
+production:
+    host: localhost
+    port: 36078
+    password: 123456
