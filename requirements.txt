@@ -2,3 +2,4 @@ Django==1.8.7
 django-bootstrap3==7.0.1
 psycopg2==2.6.1
 redis==2.10.5
+djangorestframework==3.3.3
